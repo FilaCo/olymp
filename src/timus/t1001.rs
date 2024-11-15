@@ -1,8 +1,9 @@
 use std::io;
-use std::io::{BufRead, BufReader, Read, Write};
+use std::io::{BufRead, BufReader, BufWriter, Read, Write};
 
 pub fn solve(input: &mut impl Read, output: &mut impl Write) {
     let mut buf_input = BufReader::new(input);
+    let mut buf_output = BufWriter::new(output);
 
     let result = buf_input
         .lines()
@@ -26,7 +27,7 @@ pub fn solve(input: &mut impl Read, output: &mut impl Write) {
     result
         .iter()
         .rev()
-        .for_each(|item| writeln!(output, "{:.*}", 4, item).expect("valid output"));
+        .for_each(|item| writeln!(buf_output, "{:.*}", 4, item).expect("valid output"));
 }
 
 fn main() {
