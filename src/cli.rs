@@ -34,7 +34,11 @@ impl Cli {
         match self.problem {
             SolvedProblem::T1001 => t1001::solve(&mut input_stream, &mut output_stream),
             SolvedProblem::T1521 => t1521::solve(&mut input_stream, &mut output_stream),
+
             SolvedProblem::C2031A => c2031a::solve(&mut input_stream, &mut output_stream),
+            SolvedProblem::C2037A => c2037a::solve(&mut input_stream, &mut output_stream),
+            SolvedProblem::C2037B => c2037b::solve(&mut input_stream, &mut output_stream),
+            SolvedProblem::C2037C => c2037c::solve(&mut input_stream, &mut output_stream),
         }
     }
 }
@@ -50,4 +54,10 @@ enum SolvedProblem {
     // Codeforces https://codeforces.com/
     /// https://codeforces.com/problemset/problem/2031/A
     C2031A,
+    /// https://codeforces.com/problemset/problem/2037/A
+    C2037A,
+    /// https://codeforces.com/problemset/problem/2037/B
+    C2037B,
+    /// https://codeforces.com/problemset/problem/2037/C
+    C2037C,
 }
